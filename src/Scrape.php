@@ -25,8 +25,7 @@ class Scrape
         $this->products = array_map('unserialize', array_unique(array_map('serialize', $this->products)));
 
         // Save results to a JSON file
-        $outputFile = __DIR__ . '/output.json';
-        file_put_contents($outputFile, json_encode($this->products, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        file_put_contents('output.json', json_encode($this->products, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
     }
 }
 
